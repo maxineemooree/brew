@@ -2,6 +2,8 @@
   <div class="card brew-list">
     <ul class="list-group list-group-flush">
       <li
+        @mouseover="mouseOver(index)"
+        @mouseleave="mouseLeave(index)"
         v-bind:key="index"
         v-for="(brew, index) in brews"
         class="list-group-item"
@@ -14,6 +16,14 @@ export default {
   name: "BrewList",
   props: {
     brews: Array
+  },
+  methods: {
+    mouseOver: function(index) {
+      this.$emit("mouse-over-brew", index);
+    },
+    mouseLeave: function(index) {
+      this.$emit("mouse-left-brew", index);
+    }
   }
 };
 </script>
