@@ -21,7 +21,6 @@
   </div>
   <!-- /.container -->
 </template>
-
 <script>
 import axios from "axios";
 import BrewList from "./BrewList.vue";
